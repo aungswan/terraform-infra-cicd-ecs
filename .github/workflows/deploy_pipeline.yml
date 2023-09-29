@@ -166,7 +166,7 @@ jobs:
           IMAGE_NAME: ${{ needs.deploy_aws_infrastructure.outputs.image_name }}
         if: env.repo_name != env.IMAGE_NAME
         run: |
-          aws ecr create-repository --repository-name ${{  }}
+          aws ecr create-repository --repository-name ${{ env.IMAGE_NAME }}
         
   # Start self-hosted EC2 runner
   start_runner:
